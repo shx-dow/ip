@@ -13,6 +13,7 @@
             <th>Title</th>
             <th>Due Date</th>
             <th>Completed</th>
+            <th>Priority</th>
             <th></th>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
             <td>@task.Title</td>
             <td>@task.DueDate.ToShortDateString()</td>
             <td>@(task.IsCompleted ? "✅" : "❌")</td>
+            <td>@task.Priority</td>
             <td>
                 <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@task.Id">Edit</a>
                 <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@task.Id">Delete</a>

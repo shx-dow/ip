@@ -29,6 +29,13 @@
         <label asp-for="IsCompleted" class="form-check-label"></label>
     </div>
 
+    <div class="mb-3">
+        <label asp-for="Priority" class="form-label"></label>
+        <select asp-for="Priority" class="form-select" asp-items="Html.GetEnumSelectList<TaskManager.Models.PriorityLevel>()">
+            <option disabled selected>Select Priority</option>
+        </select>
+    </div>
+
     <button type="submit" class="btn btn-success">Update</button>
     <a asp-action="Index" class="btn btn-secondary">Back</a>
 </form>
