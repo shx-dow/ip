@@ -15,8 +15,8 @@ namespace TaskManager.Models
 
         [Required]
         public string? Title { get; set; }
-        [Required]
-        public string? Description { get; set; }
+
+        public string? Description { get; set; } = string.Empty;
 
         [DataType(DataType.Date)]
         public DateTime DueDate { get; set; }

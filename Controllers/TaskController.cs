@@ -97,6 +97,8 @@ namespace TaskManager.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var task = await _context.TaskItems.FindAsync(id);
+            if (task == null)
+                return NotFound();
             _context.TaskItems.Remove(task);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
